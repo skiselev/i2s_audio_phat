@@ -10,9 +10,9 @@ This is a Raspberry Pi Zero pHAT form-factor I2S audio interface board based on 
 
 ### Schematic and PCB Layout
 
-[Schematic - Version 3.0](KiCad/I2S_Audio_pHAT-Schematic-3.0.pdf)
+[Schematic - Version 3.0](documentation/I2S_Audio_pHAT-Schematic-3.0.pdf)
 
-[PCB Layout - Version 3.0](KiCad/I2S_Audio_pHAT-Board-3.0.pdf)
+[PCB Layout - Version 3.0](documentation/I2S_Audio_pHAT-Board-3.0.pdf)
 
 ### Bill of Materials
 
