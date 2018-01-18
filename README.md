@@ -48,7 +48,7 @@ Resistor           | R19-R22   | 47 kohm, 0603                     | 4        | 
 
 ## Software Documentation
 
-### Raspbian Configuration - without ID EEPROM
+### Raspbian Configuration
 
 Open `/boot/config.txt` in your favorite editor (nano, vi) as root, for example:
 
@@ -59,7 +59,7 @@ Comment out the `dtparam=audio=on` line:
     # Enable audio (loads snd_bcm2835)
     #dtparam=audio=on
 
-Add the following lines:
+When using I2S Audio pHAT _without_ ID EEPROM (see [Raspberry Pi HAT ID EEPROM Programming](#raspberry-pi-hat-id-eeprom-programming) section below), add the following lines:
 
     # Enable WM8731 codec
     dtparam=i2c_arm=on
