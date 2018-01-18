@@ -2,7 +2,7 @@
 I2S Audio Interface for Raspberry Pi Zero
 
 ## Introduction
-This is a Raspberry Pi Zero pHAT form-factor I2S audio interface board based on a Cirrus Logic (Wolfson) WM8731 audio codec. It provides line input, line output, headphones output, and includes an on-board microphone.
+This is a Raspberry Pi Zero pHAT form-factor I2S audio interface board based on a [Cirrus Logic (Wolfson) WM8731](https://www.cirrus.com/products/wm8731/) audio codec. It provides line input, line output, headphones output, and includes an on-board microphone.
 
 ![Micro 8088 Assembled Board](images/I2S_Audio_pHAT-Complete-3.0.jpg)
 
@@ -15,6 +15,10 @@ This is a Raspberry Pi Zero pHAT form-factor I2S audio interface board based on 
 [PCB Layout - Version 3.0](documentation/I2S_Audio_pHAT-Board-3.0.pdf)
 
 ### Bill of Materials
+
+[I2S Audio pHAT project on Mouser.com](https://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=6262cdf84a) - View and order all components except of the PCB.
+
+[I2S Audio pHAT project on OSH Park](https://oshpark.com/shared_projects/yxrgLBxI) - View and order the PCB.
 
 Component type     | Reference | Description                       | Quantity | Possible sources and notes 
 ------------------ | --------- | --------------------------------- | -------- | --------------------------
@@ -79,11 +83,11 @@ Now you can use your favorite application to play music or record sound. Enjoy!
 
 The I2S Audio pHAT includes an ID EEPROM as specified by HAT requirements. This ID EEPROM allows Raspbian to automatically detect the I2S Audio pHAT, add it to the device tree, and load approprate overlays and kernel modules. Follow the instructions below to program the EEPROM.
 
-Clone the Raspberry Pi `hats` repostory from GitHub:
+Clone the Raspberry Pi [hats](https://github.com/raspberrypi/hats) repostory from GitHub:
 
     git clone https://github.com/raspberrypi/hats
 
-Clone this (I2S Audio pHAT) repository from GitHub:
+Clone the [I2S Audio pHAT](https://github.com/skiselev/i2s_audio_phat) repository from GitHub:
 
     git clone https://github.com/skiselev/i2s_audio_phat
 
