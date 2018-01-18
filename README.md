@@ -71,7 +71,9 @@ Save the file and reboot the system.
 
 Start `alsamixer`. If the I2S Audio pHAT is detected properly, it should show "Card: snd_rpi_proto" on the top left. Also use this opportunity to unmute "Output Mixer HiFi" control, otherwise the codec will not play any sound. To do so, use cursor keys to highlight that control, and then push "M" key to unmute it.
 
-Now you can use your favorite application to play music. Enjoy!
+When recording the sound, switch to *Capture* controls in `alsamixer` by pressing the *F4* key. Next select the capture source: Line or Mic, and unmute it by pressing the *Space* key.
+
+Now you can use your favorite application to play music or record sound. Enjoy!
 
 ### Raspberry Pi HAT ID EEPROM Programming
 
