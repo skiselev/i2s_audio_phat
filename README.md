@@ -46,9 +46,9 @@ Resistor           | R12, R13  | 3.9 kohm, 0603                    | 2        | 
 Resistor           | R14-R18   | 5.6 kohm, 0603                    | 5        | Mouser [603-RC0603FR-075K6L](https://www.mouser.com/ProductDetail/603-RC0603FR-075K6L)
 Resistor           | R19-R22   | 47 kohm, 0603                     | 4        | Mouser [603-RC0603FR-0747KL](https://www.mouser.com/ProductDetail/603-RC0603FR-0747KL)
 
-## Software Configuration
+## Software Documentation
 
-### Raspbian
+### Raspbian Configuration - without ID EEPROM
 
 Open `/boot/config.txt` in your favorite editor (nano, vi) as root, for example:
 
@@ -73,5 +73,27 @@ Start `alsamixer`. If the I2S Audio pHAT is detected properly, it should show "C
 
 Now you can use your favorite application to play music. Enjoy!
 
+### Raspberry Pi HAT ID EEPROM Programming
 
+The I2S Audio pHAT includes an ID EEPROM as specified by HAT requirements. This ID EEPROM allows Raspbian to automatically detect the I2S Audio pHAT, add it to the device tree, and load approprate overlays and kernel modules. Follow the instructions below to program the EEPROM.
 
+Clone the Raspberry Pi `hats` repostory from GitHub:
+
+    git clone https://github.com/raspberrypi/hats
+
+Clone this (I2S Audio pHAT) repository from GitHub:
+
+    git clone https://github.com/skiselev/i2s_audio_phat
+
+Build the `eepromutils` in the `hats` repository:
+
+    cd hats/eepromutils
+    make
+
+Create the `i2s_audio_phat.eep` ID EEPROM image, using the `eeprom_settings_i2s_audio_phat.txt` file provided in the `i2s_audio_phat` repository:
+
+    ./eepmake ../../i2s_audio_phat/eeprom_settings_i2s_audio_phat.txt i2s_audio_phat.eep /boot/overlays/rpi-proto.dtbo
+
+Finally, flash the `i2s_audio_phat.eep` ID EEPROM image to the EEPROM. Make sure to close the JP1 jumper on the I2S Audio pHAT before writing the EEPROM, for example using male to male jumper wire, or otherwise the write will fail.
+
+    sudo ./eepflash.sh -w -f=i2s_audio_phat.eep -t=24c32
